@@ -1844,7 +1844,7 @@ class LanguageService {
     language = "en";
     this.translateService.setDefaultLang(language);
     // Change the URL without navigate:
-    this.location.go(language);
+    // this.location.go(language)
     this.language = language;
   }
   changeLanguage(language) {

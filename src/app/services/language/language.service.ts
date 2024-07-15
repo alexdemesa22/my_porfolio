@@ -21,7 +21,7 @@ export class LanguageService {
     this.translateService.setDefaultLang(language)
 
     // Change the URL without navigate:
-    this.location.go(language)
+    // this.location.go(language)
 
     this.language=language
   }
