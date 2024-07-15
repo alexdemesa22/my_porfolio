@@ -1,7 +1,7 @@
 <nav [@animateMenu] class="navbar main-navbar on-top" [class.nav-shadow]='this.pageYPosition>0'>
     <div class="container">
         <a class="navbar-brand text-light" [routerLink]="'/'">
-            <img src='assets/images/LogoNew.png' width='50' />
+            <img src='assets/images/LogoNew.png' width='40' />
         </a>
         <ul ngbNav #nav="ngbNav" class="menu-ul">
             <li ngbNavItem>
@@ -72,7 +72,7 @@
                             </a>
                         </li>
                       <li >
-                        <a (click)='scroll("proyects")'>
+                        <a (click)='scroll("contact")'>
                             <span>03. </span> {{"Header.Item4" | translate}}
                         </a>
                       </li>
