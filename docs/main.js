@@ -21,7 +21,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const routes = [{
-  path: ':language?',
+  path: '',
   component: _components_home_home_component__WEBPACK_IMPORTED_MODULE_0__.HomeComponent
 }, {
   path: ':language?/proyectos',
@@ -814,7 +814,7 @@ class HeaderComponent {
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵclassProp"]("nav-shadow", ctx.pageYPosition > 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("@animateMenu", undefined);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("routerLink", "inicio");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("routerLink", "/");
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](9);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate1"](" ", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpipeBind1"](12, 19, "Header.Item1"), "");
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](8);
@@ -1837,11 +1837,11 @@ class LanguageService {
   constructor(translateService, location) {
     this.translateService = translateService;
     this.location = location;
+    this.language = "en";
   }
   initLanguage() {
     this.translateService.addLangs(["en"]);
-    let language = navigator.language || navigator.userLanguage;
-    language = "en";
+    let language = "en";
     this.translateService.setDefaultLang(language);
     // Change the URL without navigate:
     // this.location.go(language)
@@ -1849,7 +1849,6 @@ class LanguageService {
   }
   changeLanguage(language) {
     this.translateService.setDefaultLang(language);
-    this.location.go(language);
     this.language = language;
   }
   static #_ = this.ɵfac = function LanguageService_Factory(t) {
