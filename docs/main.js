@@ -146,7 +146,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-// import { AnimateOnScrollModule } from 'ng2-animate-on-scroll';
 
 
 
@@ -1840,9 +1839,9 @@ class LanguageService {
     this.location = location;
   }
   initLanguage() {
-    this.translateService.addLangs(["en", "es"]);
+    this.translateService.addLangs(["en"]);
     let language = navigator.language || navigator.userLanguage;
-    language = language.split("-").includes("es") ? "es" : "en";
+    language = "en";
     this.translateService.setDefaultLang(language);
     // Change the URL without navigate:
     this.location.go(language);
