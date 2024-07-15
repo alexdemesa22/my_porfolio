@@ -1,0 +1,207 @@
+{
+
+    "Header.Item1" : "About me",
+    "Header.Item2" : "Experience",
+    "Header.Item3" : "Projects",
+    "Header.Item4" : "Contact",
+    "Header.cvBtn" : "Resume",
+    "Header.cvName": "DeMesaAlexander-resume-latest.pdf",
+
+    "Banner.Pretitle": "Hello! My name is",
+    "Banner.Description": "I have <span class='underline'>5 years of experience</span> developing systems, interfaces, and technological solutions, as well as providing support to enhance web functionality. My expertise lies in supporting and refactoring clean, reusable, and scalable code using <span class='underline'>Angular</span> and <span class='underline'>Ionic Framework</span> for mobile development. I prioritize delivering robust and maintainable code that meets client requirements and improves user experience.",
+    "Banner.ActionBtn": "Get in touch",
+
+    "AboutMe.Title": "About me",
+    "AboutMe.Paragraphs": [
+        "In my <span class='underline'>5 years of experience</span>, I've taken on many roles, including  <span class='underline'>Frontend Developer</span>, <span class='underline'>Maintenance Lead</span>, and <span class='underline'>Technical Analyst</span>. I am passionate about using my knowledge to create innovative solutions that address various challenges. My capabilities extend to implementing system improvements, optimizing websites, standardizing patterns, and proposing and executing ideas that enhance project value.",
+        "I am committed to ensuring seamless integration and functionality, providing ongoing support and timely updates to meet evolving client needs. My approach includes thorough documentation and transparent communication, keeping clients informed and involved throughout the development process.",
+        "Some of the technologies I have trained and worked with include, but are not limited to:"
+    ],
+
+
+    "Experience.Title": "Experience",
+    "Experience.Jobs": [
+        
+        {
+            "Tab": "LeenTech Network Solution",
+            "Title": "Jr Software Engineer",
+            "Date": "January 2019 - January 2021",
+            "Description": [
+                "Developing a system using Agile Development.",
+                "Maintain and support for the Mobile/System Apps.",
+                "Creation of Ecommerce website for Wordpress/ Pure Php framework.",
+                "Programming of custom functions and plugins for customization of a WordPress platform.",
+                "Creating reports for client meetings.",
+                "Using Java, and Obj-C/Swift for the Mobile development on Android and iOS"
+            ]
+      },
+      {
+            "Tab": "Accenture Inc",
+            "Title": "Sr Software Engineer",
+            "Date": "April 2021 - Present",
+            "Description": [
+              "Creation and maintenance of a mobile app with fundamental of Healthcare",
+              "Embedded 3rd party system for the mobile app using Angular/Ionic framework",
+              "Creation and maintenance for the CRM system (Salesforce -  Dev, and Admin",
+              "Implement google analytics 4 for the mobile app/portal for Healthcare apps",
+              "Planning meetings in reports for client needs.",
+              "Maintenance lead dev for healthcare apps"
+            ]
+        },
+        {
+            "Tab": "Freelancer",
+            "Title": "Independent",
+            "Date": "May 2019 - Present",
+            "Description": [
+              "Implementing continuous improvements, working on frontend and backend.",
+              "Creating platforms with Angular, Laravel, Python, WordPress programmed with functional, reactive, and object-oriented programming paradigms.",
+              "Embedded Hardware (Arduino) for the software apps like java, and python",
+              "Design layout with SASS, Bootstrap, Materialize, etc.",
+              "Maintanance for the existing applications (Wordpress, Ionic Framework)"
+            ]
+        }
+       
+    ],
+
+    "FeatureProjects.Title": "My projects",
+    "FeatureProjects.Label": "Featured Project",
+    "FeatureProjects.Projects": [{
+        "Title": "Gisselle",
+        "Description": "Web application for internal company management that covers sales, billing, and extensive and complex tracking departments, made with <span class='underline'>Angular</span> and <span class='underline'>Laravel</span>. It works with <span class='underline'>websockets</span>, <span class='underline'>schedules</span>, <span class='underline'>Laravel jobs</span>, integrations with WordPress, Zadarma, LiveConnect, etc.",
+        "imgs": [
+        "assets/images/gisselle/Captura de pantalla 2024-05-19 1009582.png",
+        "assets/images/gisselle/Captura de pantalla 2024-05-19 115514.png",
+        "assets/images/gisselle/Captura de pantalla 2024-05-19 115702.png",
+        "assets/images/gisselle/Captura de pantalla 2024-05-19 115829.png",
+        "assets/images/gisselle/Captura de pantalla 2024-05-19 1009582.png"
+        ],
+        "Technologies": ["Laravel", "Angular", "SASS", "Angular Material", "RxJS"]
+        },
+        
+        {
+          "Title": "Emelteciot",
+          "Description": "Monitoring application for data consultation, made with <span class='underline'>Angular</span> and <span class='underline'>Laravel</span>. It applies the <span class='underline'>chart.js</span> graphics library",
+          "imgs": [
+              "assets/images/proyex2/6d7d8f04-f1f0-40c7-afbb-d2944cdb4d9c.png",
+              "assets/images/proyex2/849c117f-bed9-4406-9c13-c8669f655acc.png",
+              "assets/images/proyex2/62cdf90c-6196-4a6e-b639-8919cda4f749.png",
+              "assets/images/proyex2/8c919208-d6a8-48f4-890d-4817323b6923.png",
+              "assets/images/proyex2/8c919208-d6a8-48f4-890d-4817323b6923 (1).png"
+          ],
+          "Technologies": ["Laravel", "Angular", "SASS", "Angular Material", "RxJS"]
+        },
+        
+        {
+          "Title": "Agrourbana",
+          "Description": "Monitoring application built from scratch with auth module, <span class='underline'>configurable graphs</span>, <span class='underline'>configurable alarms</span>, and <span class='underline'>user management</span>. It also has reactive form logic for configuring parameters.",
+          "imgs": [
+              "assets/images/agrourbana/agrourbana1.png",
+              "assets/images/agrourbana/agrourbana2.png",
+              "assets/images/agrourbana/agrourbana3.png",
+              "assets/images/agrourbana/agrourbana4.png",
+              "assets/images/agrourbana/agrourbana5.png"
+          ],
+          "Technologies": ["Laravel", "Angular", "SASS", "Angular Material", "RxJS"]
+        },
+        {
+            "Title": "Tu super plan",
+            "Description": "Health plan quote that has a search engine with which advanced queries are made. Plans are displayed based on the user's age, monthly income, and location. It has <span class='underline'>online chat</span, <span class='underline'>contact form</span>, <span class='underline'>notification system by whatsapp and mail</span>, <span class='underline'>auth</span>, and <span class='underline'>internet information management through the role of administrator.</span>",
+            "imgs": [
+                "assets/images/tusuperplan/tusuperplan1.png",
+                "assets/images/tusuperplan/tusuperplan2.png",
+                "assets/images/tusuperplan/tusuperplan3.png",
+                "assets/images/tusuperplan/tusuperplan4.png",
+                "assets/images/tusuperplan/tusuperplan5.png"
+            ],
+            "Technologies": ["Laravel", "Angular", "SASS", "Angular Material", "RxJS"]
+        },
+        {
+            "Title": "Proyexiot",
+            "Description": "Data monitoring platform belonging to water wells, tugboats, and various installations made from scratch with auth module, <span class='underline'>configurable graphics</span>, <span class='underline'>configurable alarms</span>, <span class='underline'>user management</span>, and <span class='underline'>geolocation with openlayers.</span>",
+            "imgs": [
+                "assets/images/proyex/proyex1.png",
+                "assets/images/proyex/proyex2.png",
+                "assets/images/proyex/proyex3.png",
+                "assets/images/proyex/proyex4.png",
+                "assets/images/proyex/proyex5.png",
+                "assets/images/proyex/proyex6.png",
+                "assets/images/proyex/proyex7.png",
+                "assets/images/proyex/proyex8.png",
+                "assets/images/proyex/proyex9.png",
+                "assets/images/proyex/proyex10.png",
+                "assets/images/proyex/proyex11.png",
+                "assets/images/proyex/proyex12.png"
+            ],
+            "Technologies": ["Laravel", "Angular", "SASS", "Angular Material", "RxJS"]
+        },
+        {
+            "Title": "Hands game",
+            "Description": "The rock-paper-scissors game extended. A personal project developed in angular in which you play randomly against the machine. It has the use of services, interfaces, and components.",
+            "imgs": ["assets/images/hands-game.png"],
+            "ghLink": "https://github.com/andresjosehr/hands-game",
+            "demoLink": "https://projects.andresjosehr.com/hands-game",
+            "Technologies": ["Angular", "CSS GRID", "SASS", "Angular animations"]
+        },
+        {
+            "Title": "Countries viewer",
+            "Description": "An interface that consumes an API of countries with which you can view a list of countries, see details of each country, filter by name and region. It also has a dark mode to switch between dark and light themes.",
+            "imgs": ["assets/images/countries-viewer.png"],
+            "ghLink": "https://github.com/andresjosehr/countries-viewer",
+            "demoLink": "https://projects.andresjosehr.com/countries-viewer",
+            "Technologies": ["Angular", "RxJS", "SASS", "API"]
+        }
+    ],
+
+
+
+    "OtherProjects.Title": "More projects",
+    "OtherProjects.Projects": [{
+            "Title": "Pokemon",
+            "Description": "Pokemon search engine that uses the pokeapi. Object-oriented programming was used to organize the information of the pokemons along with their respective image.",
+            "ghLink": "https://github.com/andresjosehr/pokemon-angular",
+            "demoLink": "https://projects.andresjosehr.com/pokemon-list",
+            "Technologies": ["Angular", "RxJs", "API", "Bootstrap"]
+        },
+        {
+            "Title": "Coming soon page",
+            "Description": "Personal project of a two-column split page to be used as a 'Coming soon page'. Scheduled to be a fully responsive design. It has a form field to subscribe by email.",
+            "ghLink": "https://github.com/andresjosehr/coming-soon-page",
+            "demoLink": "https://projects.andresjosehr.com/coming-soon-page",
+            "Technologies": ["Angular", "SASS", "CSS GRID", "Reactive form"]
+        },
+        {
+            "Title": "Four card feature section",
+            "Description": "A single page that has a minimal design, listing four features on four cards. Input animations are done with angular animations.",
+            "ghLink": "https://github.com/andresjosehr/fourd-card-feature-section",
+            "demoLink": "https://projects.andresjosehr.com/four-card-feature-section",
+            "Technologies": ["Angular", "SASS", "CSS GRID"]
+        },
+        {
+            "Title": "Social proof section",
+            "Description": "Personal project of a page designed from a Figma layout. Angular was used for development together with SASS and CSS GRID.",
+            "ghLink": "https://github.com/andresjosehr/social-proof-section",
+            "demoLink": "https://projects.andresjosehr.com/social-proof-section",
+            "Technologies": ["Angular", "CSS GRID", "GIT"]
+        },
+        {
+            "Title": "FAQ accordion card",
+            "Description": "FAQ accordion with logic and animations made in Angular.",
+            "ghLink": "https://github.com/andresjosehr/faq-accordion",
+            "demoLink": "https://proyectos.andresjosehr.com/faq-accordion",
+            "Technologies": ["Angular", "CSS GRID", "Angular animations"]
+        },
+        {
+            "Title": "Profile card",
+            "Description": "Simple one-page design that features a profile letter with basic information about a person.",
+            "ghLink": "https://github.com/andresjosehr/profile-card-component",
+            "demoLink": "https://proyectos.andresjosehr.com/profile-card-component",
+            "Technologies": ["Angular", "SASS", "GIT"]
+        }
+    ],
+    "Contact.Pretitle": "What’s Next",
+    "Contact.Title": "Get in touch!",
+    "Contact.Content": "I will be happy to receive your contact if you want to talk about new opportunities. Write me, and I will reply as soon as I see your message. Simple one-page design that features a profile letter with basic information about a person.",
+    "Contact.Btn": "Say Hello"
+
+
+}
