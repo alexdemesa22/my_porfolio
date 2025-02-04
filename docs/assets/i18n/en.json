@@ -5,7 +5,7 @@
     "Header.Item3" : "Projects",
     "Header.Item4" : "Contact",
     "Header.cvBtn" : "Resume",
-    "Header.cvName": "DeMesaAlexander-resume-latest.pdf",
+    "Header.cvName": "AlexanderDeMesa_Resume.pdf",
 
     "Banner.Pretitle": "Hello! My name is",
     "Banner.Description": "I have <span class='underline'>5 years of experience</span> developing systems, interfaces, and technological solutions, as well as providing support to enhance web functionality. My expertise lies in supporting and refactoring clean, reusable, and scalable code using <span class='underline'>Angular</span> and <span class='underline'>Ionic Framework</span> for mobile development. I prioritize delivering robust and maintainable code that meets client requirements and improves user experience.",
@@ -37,12 +37,12 @@
       },
       {
             "Tab": "Accenture Inc",
-            "Title": "Sr Software Engineer",
+            "Title": "Software Engineer Team Lead/Specialist",
             "Date": "April 2021 - Present",
             "Description": [
               "Creation and maintenance of a mobile app with fundamental of Healthcare",
               "Embedded 3rd party system for the mobile app using Angular/Ionic framework",
-              "Creation and maintenance for the CRM system (Salesforce -  Dev, and Admin",
+              "Creation and maintenance for the CRM system (Salesforce -  Dev, and Admin)",
               "Implement google analytics 4 for the mobile app/portal for Healthcare apps",
               "Planning meetings in reports for client needs.",
               "Maintenance lead dev for healthcare apps"
@@ -57,7 +57,8 @@
               "Creating platforms with Angular, Laravel, Python, WordPress programmed with functional, reactive, and object-oriented programming paradigms.",
               "Embedded Hardware (Arduino) for the software apps like java, and python",
               "Design layout with SASS, Bootstrap, Materialize, etc.",
-              "Maintanance for the existing applications (Wordpress, Ionic Framework)"
+              "Maintanance for the existing applications (Wordpress, Ionic Framework)",
+              "Developing a system using Laravel and PHP framework"
             ]
         }
        
