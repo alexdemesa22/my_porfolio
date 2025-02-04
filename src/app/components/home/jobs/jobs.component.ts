@@ -11,7 +11,6 @@ export class JobsComponent implements OnInit {
   active = 0
   
   constructor(
-    public analyticsService: AnalyticsService
   ) { }
 
   ngOnInit(): void {
