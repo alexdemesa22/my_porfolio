@@ -15,6 +15,55 @@
         margin-right: 0px;
       }
 
+      .social-links-header {
+        margin: 0px 8px;
+        
+        a {
+          color: $LightestSlate;
+          font-size: 20px;
+          transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+          
+          &:hover {
+            color: $Green;
+            transform: translateY(-3px);
+          }
+        }
+      }
+
+      .theme-toggle-header {
+        margin: 0px 8px;
+        display: flex;
+        align-items: center;
+        
+        .theme-toggle-btn {
+          background: none;
+          border: none;
+          cursor: pointer;
+          color: $LightestSlate;
+          font-size: 20px;
+          padding: 5px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+          line-height: 1;
+          
+          &:hover {
+            color: $Green;
+            transform: translateY(-3px);
+          }
+
+          i {
+            transition: transform 0.3s ease;
+            display: block;
+          }
+
+          &:active i {
+            transform: rotate(180deg);
+          }
+        }
+      }
+
     }
     .menu-responsive {
         position: fixed;
@@ -50,6 +99,53 @@
             }
           }
 
+        }
+        
+        .social-links-mobile {
+          a {
+            color: $LightestSlate;
+            display: flex !important;
+            align-items: center;
+            gap: 10px;
+            
+            i {
+              font-size: 20px;
+            }
+            
+            span {
+              font-size: 16px;
+            }
+            
+            &:hover {
+              color: $Green;
+            }
+          }
+        }
+
+        .theme-toggle-mobile {
+          .theme-toggle-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: $LightestSlate;
+            display: flex !important;
+            align-items: center;
+            gap: 10px;
+            width: 100%;
+            padding: 3px 20px 20px;
+            font-family: $CodeFont;
+            font-size: 16px;
+            text-align: left;
+            transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+            
+            i {
+              font-size: 20px;
+            }
+            
+            &:hover {
+              color: $Green;
+            }
+          }
         }
     }
     .aside-show {

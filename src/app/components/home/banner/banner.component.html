@@ -1,23 +1,32 @@
 <section class="section banner" id="banner">
     <div [@bannerTrigger] class="container">
         <div class="section-box-banner">
-            <div class="content">
-                <div>
-                    <!-- <h1>Hola, mi nombre es</h1> -->
-                    <h1>{{"Banner.Pretitle" | translate}}</h1>
+            <div class="row align-items-center">
+                <div class="col-12 col-md-8 order-2 order-md-1">
+                    <div class="content">
+                        <div>
+                            <!-- <h1>Hola, mi nombre es</h1> -->
+                            <h1>{{"Banner.Pretitle" | translate}}</h1>
+                        </div>
+                        <div class='banner-title'>
+                            <h2>Alexander De Mesa</h2>
+                            <h3>Software Engineer</h3>
+                        </div>
+                        <div class='banner-description'>
+                            <p [innerHTML]='("Banner.Description" | translate).replace("{{years}}", yearsOfExperience)' class="mt-4"></p>
+                        </div>
+                    </div>
+                    <div class="div-btn-banner">
+                        <a (click)="scroll('contact')" class="main-btn" style="cursor: pointer;">
+                            {{"Banner.ActionBtn" | translate}}
+                        </a>
+                    </div>
                 </div>
-                <div class='banner-title'>
-                    <h2>Alexander De Mesa</h2>
-                    <h3>Software Engineer</h3>
+                <div class="col-12 col-md-4 order-1 order-md-2 text-center mb-4 mb-md-0">
+                    <div class="banner-img-container">
+                        <img class="rounded" src="assets/images/alexprofile1.jpg" alt="Alexander De Mesa">
+                    </div>
                 </div>
-                <div class='banner-description'>
-                    <p [innerHTML]='"Banner.Description" | translate' class="mt-4"></p>
-                </div>
-            </div>
-            <div class="div-btn-banner">
-                <a href="mailto:alexdemesa22@gmail.com" target="_black" class="main-btn">
-                    {{"Banner.ActionBtn" | translate}}
-                </a>
             </div>
         </div>
     </div>

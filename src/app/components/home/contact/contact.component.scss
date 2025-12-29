@@ -60,19 +60,101 @@
         text-align: center;
     }
 
+    .contact-form-container {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .contact-form {
+        .form-group {
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 15px;
+            background-color: $LightNavy;
+            border: 1px solid $LightestNavy;
+            border-radius: 4px;
+            color: $LightestSlate;
+            font-family: $CodeFont;
+            font-size: 14px;
+            transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+            &:focus {
+                outline: none;
+                border-color: $Green;
+                background-color: rgba($LightNavy, 0.8);
+            }
+
+            &::placeholder {
+                color: $Slate;
+            }
+
+            &.error {
+                border-color: #ff6b6b;
+            }
+        }
+
+        textarea.form-input {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .error-message {
+            color: #ff6b6b;
+            font-size: 12px;
+            font-family: $CodeFont;
+            margin-top: 5px;
+            text-align: left;
+        }
+
+        .success-message {
+            color: $Green;
+            font-size: 14px;
+            font-family: $CodeFont;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: rgba($Green, 0.1);
+            border: 1px solid $Green;
+            border-radius: 4px;
+        }
+
+        .form-submit {
+            margin-top: 30px;
+            text-align: center;
+
+            button {
+                &:disabled {
+                    opacity: 0.5;
+                    cursor: not-allowed;
+                }
+            }
+        }
+    }
+
 }
 
 @media (max-width: 768px){
     
     .contact{
         height: 100vh;
-        padding: 0 !important;
+        padding: 0 20px !important;
         margin: 0 auto !important;
         display: table;
 
         .container{
             display: table-cell;
             vertical-align: middle;
+        }
+
+        .contact-title{
+            font-size: 40px;
+        }
+
+        p{
+            padding: 0 10px;
         }
     }
 }

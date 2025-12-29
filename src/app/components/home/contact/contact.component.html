@@ -12,17 +12,76 @@
       <p data-aos="fade-up" data-aos-duration="1000">
         {{ "Contact.Content" | translate }}
       </p>
-      <div class="mt-5">
-        <a
-         
-          href="mailto:alexdemesa22@gmail.com"
-          target="_blank"
-          class="main-btn"
-          data-aos="fade-up"
-          data-aos-duration="1000"
-        >
-          {{ "Contact.Btn" | translate }}
-        </a>
+      
+      <div class="contact-form-container mt-5" data-aos="fade-up" data-aos-duration="1000">
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+          <div class="form-group">
+            <input 
+              type="text" 
+              id="name" 
+              formControlName="name" 
+              placeholder="Name"
+              class="form-input"
+              [class.error]="contactForm.get('name').invalid && contactForm.get('name').touched"
+            />
+            <div class="error-message" *ngIf="contactForm.get('name').invalid && contactForm.get('name').touched">
+              Name is required
+            </div>
+          </div>
+
+          <div class="form-group">
+            <input 
+              type="email" 
+              id="email" 
+              formControlName="email" 
+              placeholder="Email"
+              class="form-input"
+              [class.error]="contactForm.get('email').invalid && contactForm.get('email').touched"
+            />
+            <div class="error-message" *ngIf="contactForm.get('email').invalid && contactForm.get('email').touched">
+              <span *ngIf="contactForm.get('email').errors?.required">Email is required</span>
+              <span *ngIf="contactForm.get('email').errors?.email">Please enter a valid email</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <textarea 
+              id="message" 
+              formControlName="message" 
+              placeholder="Message"
+              rows="5"
+              class="form-input"
+              [class.error]="contactForm.get('message').invalid && contactForm.get('message').touched"
+            ></textarea>
+            <div class="error-message" *ngIf="contactForm.get('message').invalid && contactForm.get('message').touched">
+              Message is required
+            </div>
+          </div>
+
+          <div class="form-submit">
+            <button 
+              type="submit" 
+              class="main-btn"
+              [disabled]="contactForm.invalid || isSubmitting"
+            >
+              {{ isSubmitting ? 'Sending...' : ("Contact.Btn" | translate) }}
+            </button>
+          </div>
+
+          <div class="success-message" *ngIf="submitSuccess">
+            ✓ Message sent successfully! I'll get back to you soon.
+          </div>
+          <div class="error-message" *ngIf="submitError">
+            ✗ There was an error sending your message. Please try again or email me directly at alexdemesa22&#64;gmail.com
+          </div>
+        </form>
+        
+        <!-- <div class="text-center mt-5 pt-4" data-aos="fade-up" data-aos-duration="1000">
+          <p class="mb-3" style="color: #8892b0;">Prefer a quick chat?</p>
+          <a href="https://calendly.com/alexdemesa22" target="_blank" class="main-btn">
+            <i class="fas fa-calendar-alt mr-2"></i> Schedule a Call
+          </a>
+        </div> -->
       </div>
     </div>
   </div>

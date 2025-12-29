@@ -4639,6 +4639,7 @@ readers do not read off random characters that represent icons */
   \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 @charset "UTF-8";
 /* You can add global styles to this file, and also import other style files */
+/* Dark Theme (Default) */
 body {
   margin: 0;
   width: 100%;
@@ -4651,6 +4652,152 @@ body {
   line-height: 1.3;
   font-family: Calibre, San Francisco, SF Pro Text, -apple-system, system-ui, BlinkMacSystemFont, Roboto, Helvetica Neue, Segoe UI, Arial, sans-serif;
   font-size: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Light Theme */
+body.light-theme {
+  background-color: #f8f9fa;
+  color: #2c3e50 !important;
+}
+body.light-theme .section {
+  background: #ffffff;
+}
+body.light-theme .navbar {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+body.light-theme .navbar .nav-number {
+  color: #64ffda !important;
+}
+body.light-theme .navbar .nav-text {
+  color: #2c3e50 !important;
+}
+body.light-theme .navbar .main-btn {
+  color: #64ffda !important;
+  border-color: #64ffda !important;
+}
+body.light-theme .navbar .main-btn:hover {
+  background-color: rgba(100, 255, 218, 0.1) !important;
+}
+body.light-theme .navbar .social-links-header a {
+  color: #2c3e50 !important;
+}
+body.light-theme .navbar .social-links-header a:hover {
+  color: #64ffda !important;
+}
+body.light-theme .navbar .theme-toggle-btn {
+  color: #2c3e50 !important;
+}
+body.light-theme .navbar .theme-toggle-btn:hover {
+  color: #64ffda !important;
+}
+body.light-theme .section-title {
+  color: #2c3e50 !important;
+}
+body.light-theme .section-title .n-section-title {
+  color: #64ffda !important;
+}
+body.light-theme .section-title:after {
+  background-color: #e0e0e0 !important;
+}
+body.light-theme .banner h1 {
+  color: #64ffda !important;
+}
+body.light-theme .banner h2 {
+  color: #2c3e50 !important;
+}
+body.light-theme .banner h3 {
+  color: #5a6c7d !important;
+}
+body.light-theme .banner p {
+  color: #5a6c7d !important;
+}
+body.light-theme .banner .main-btn {
+  color: #64ffda !important;
+  border-color: #64ffda !important;
+}
+body.light-theme .banner .main-btn:hover {
+  background-color: rgba(100, 255, 218, 0.1) !important;
+}
+body.light-theme .about .section-title, body.light-theme .jobs .section-title, body.light-theme .proyects .section-title, body.light-theme .stats .section-title, body.light-theme .contact .section-title {
+  color: #2c3e50 !important;
+}
+body.light-theme .about p, body.light-theme .about li, body.light-theme .about span, body.light-theme .about .proyect-description-box, body.light-theme .jobs p, body.light-theme .jobs li, body.light-theme .jobs span, body.light-theme .jobs .proyect-description-box, body.light-theme .proyects p, body.light-theme .proyects li, body.light-theme .proyects span, body.light-theme .proyects .proyect-description-box, body.light-theme .stats p, body.light-theme .stats li, body.light-theme .stats span, body.light-theme .stats .proyect-description-box, body.light-theme .contact p, body.light-theme .contact li, body.light-theme .contact span, body.light-theme .contact .proyect-description-box {
+  color: #5a6c7d !important;
+}
+body.light-theme .about .skills-category-title, body.light-theme .jobs .skills-category-title, body.light-theme .proyects .skills-category-title, body.light-theme .stats .skills-category-title, body.light-theme .contact .skills-category-title {
+  color: #64ffda !important;
+}
+body.light-theme .about .proyect-name, body.light-theme .about h5, body.light-theme .about h4, body.light-theme .jobs .proyect-name, body.light-theme .jobs h5, body.light-theme .jobs h4, body.light-theme .proyects .proyect-name, body.light-theme .proyects h5, body.light-theme .proyects h4, body.light-theme .stats .proyect-name, body.light-theme .stats h5, body.light-theme .stats h4, body.light-theme .contact .proyect-name, body.light-theme .contact h5, body.light-theme .contact h4 {
+  color: #2c3e50 !important;
+}
+body.light-theme .about .feature-proyect, body.light-theme .jobs .feature-proyect, body.light-theme .proyects .feature-proyect, body.light-theme .stats .feature-proyect, body.light-theme .contact .feature-proyect {
+  color: #64ffda !important;
+}
+body.light-theme .stat-card {
+  background: #ffffff !important;
+  border-color: rgba(100, 255, 218, 0.2) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+}
+body.light-theme .stat-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1) !important;
+}
+body.light-theme .stat-card .stat-value {
+  color: #2c3e50 !important;
+}
+body.light-theme .stat-card .stat-label {
+  color: #5a6c7d !important;
+}
+body.light-theme .job-tab {
+  color: #5a6c7d !important;
+}
+body.light-theme .job-tab.active {
+  color: #64ffda !important;
+  border-color: #64ffda !important;
+  background-color: rgba(100, 255, 218, 0.1) !important;
+}
+body.light-theme .job-tab:hover {
+  background-color: rgba(100, 255, 218, 0.05) !important;
+  color: #64ffda !important;
+}
+body.light-theme .proyect-description-box {
+  background-color: #f8f9fa !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+  color: #5a6c7d !important;
+}
+body.light-theme .form-input {
+  background-color: #ffffff !important;
+  border-color: #e0e0e0 !important;
+  color: #2c3e50 !important;
+}
+body.light-theme .form-input::placeholder {
+  color: #95a5a6 !important;
+}
+body.light-theme .form-input:focus {
+  border-color: #64ffda !important;
+}
+body.light-theme .form-input.error {
+  border-color: #e74c3c !important;
+}
+body.light-theme footer {
+  background-color: #ffffff !important;
+  color: #5a6c7d !important;
+}
+body.light-theme footer a {
+  color: #5a6c7d !important;
+}
+body.light-theme footer a:hover {
+  color: #64ffda !important;
+}
+body.light-theme .menu-responsive aside {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+}
+body.light-theme .menu-responsive aside a {
+  color: #2c3e50 !important;
+}
+body.light-theme .menu-responsive aside a span {
+  color: #64ffda !important;
 }
 
 .section-box {
@@ -4659,6 +4806,7 @@ body {
 
 .section {
   background: #0a192f;
+  transition: background-color 0.3s ease;
 }
 
 .code-font {
@@ -4824,6 +4972,34 @@ a:hover {
     font-size: 18px;
   }
 }
+/* PDF Modal Styling */
+::ng-deep .pdf-modal .modal-content {
+  background-color: #0a192f;
+  border: 1px solid #303C55;
+  border-radius: 8px;
+  overflow: hidden;
+}
+::ng-deep .pdf-modal .modal-dialog {
+  max-width: 90vw;
+  width: 90vw;
+  margin: 1.75rem auto;
+}
+@media (max-width: 768px) {
+  ::ng-deep .pdf-modal .modal-dialog {
+    max-width: 95vw;
+    width: 95vw;
+    margin: 0.5rem auto;
+  }
+}
+
+ngb-modal-backdrop {
+  z-index: 10000 !important;
+}
+
+ngb-modal-window {
+  z-index: 10000 !important;
+}
+
 /* Importing Bootstrap SCSS file. */
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)

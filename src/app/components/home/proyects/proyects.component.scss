@@ -113,6 +113,10 @@
     .proyect-info-left {
         background-image: none !important;
     }
+    
+    .mobile-project-image {
+        display: none !important;
+    }
 }
 
 @media (max-width: 768px) {
@@ -144,16 +148,29 @@
             .proyect-info-left {
                 display: block !important;
                 margin: 0px !important;
-                background-size: cover;
-                background-position: center;
-                background-repeat: no-repeat;
+                background-image: none !important;
                 border-radius: 3px;
                 .proyect-box {
                     display: block;
                 }
             }
             .img-feature-proyect-container {
-                display: none;
+                display: none !important;
+            }
+            
+            .mobile-project-image {
+                display: block !important;
+                margin: 20px 0;
+                border-radius: 3px;
+                overflow: hidden;
+                
+                img {
+                    width: 100%;
+                    height: auto;
+                    max-height: 250px;
+                    object-fit: cover;
+                    border-radius: 3px;
+                }
             }
         }
         .proyect-info-right,

@@ -16,6 +16,22 @@
                 margin-top: 98px;
             }
 
+            .banner-img-container {
+                img {
+                    width: 200px;
+                    height: 200px;
+                    object-fit: cover;
+                    border: 2px solid $Green;
+                    box-shadow: 0 10px 30px -15px rgba(2,12,27,0.7);
+                    transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
+
+                    &:hover {
+                        transform: translateY(-5px);
+                        box-shadow: 0 20px 30px -15px rgba(2,12,27,0.9);
+                    }
+                }
+            }
+
             h1{
     
                 color: #64ffda;
@@ -55,6 +71,31 @@
 
        
     }    
+}
+
+@media (min-width: 768px) {
+    .banner {
+        .banner-img-container {
+            display: none !important;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .banner {
+        .content {
+            margin-top: 20px !important;
+        }
+        
+        .banner-img-container {
+            margin-top: 110px;
+            margin-bottom: 30px;
+        }
+        
+        h2, h3 {
+            font-size: 50px !important;
+        }
+    }
 }
 
 

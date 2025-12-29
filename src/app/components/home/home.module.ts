@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home.component';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HttpClient } from '@angular/common/http';
@@ -9,6 +10,7 @@ import { ContactComponent } from './contact/contact.component';
 import { JobsComponent } from './jobs/jobs.component';
 import { MoreProyectsComponent } from './more-proyects/more-proyects.component';
 import { ProyectsComponent } from './proyects/proyects.component';
+import { StatsComponent } from './stats/stats.component';
 import { NgbModule, NgbNav, NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -28,9 +30,11 @@ export function HttpLoaderFactory(http: HttpClient){
     ProyectsComponent,
     MoreProyectsComponent,
     ContactComponent,
+    StatsComponent,
   ],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     NgbNavModule,
     CarouselModule,
     TranslateModule.forChild({

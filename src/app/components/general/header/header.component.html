@@ -20,6 +20,21 @@
                 <a ngbNavLink (click)='scroll("contact")'><span class='nav-number'>03. </span> <span class="underline nav-text"> {{"Header.Item4" | translate}}</span></a>
                 <ng-template ngbNavContent>Second content</ng-template>
             </li>
+            <li class="social-links-header">
+                <a href="https://github.com/alexdemesa22" target="_blank" rel="noopener noreferrer" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            <li class="social-links-header">
+                <a href="https://www.linkedin.com/in/alexander-de-mesa-5579a5202/" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            <li class="theme-toggle-header">
+                <button (click)="toggleTheme()" class="theme-toggle-btn" [title]="isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'">
+                    <i [class]="isDarkMode ? 'fas fa-sun' : 'fas fa-moon'"></i>
+                </button>
+            </li>
             <li ngbNavItem>
                 <a (click)="downloadCV()" class="main-btn cv-btn" ngbNavLink>
                   {{"Header.cvBtn" | translate}}
@@ -75,6 +90,24 @@
                         <a (click)='scroll("contact")'>
                             <span>03. </span> {{"Header.Item4" | translate}}
                         </a>
+                      </li>
+                      <li class="social-links-mobile">
+                          <a href="https://github.com/alexdemesa22" target="_blank" rel="noopener noreferrer">
+                              <i class="fab fa-github"></i>
+                              <span>GitHub</span>
+                          </a>
+                      </li>
+                      <li class="social-links-mobile">
+                          <a href="https://www.linkedin.com/in/alexander-de-mesa-5579a5202/" target="_blank" rel="noopener noreferrer">
+                              <i class="fab fa-linkedin-in"></i>
+                              <span>LinkedIn</span>
+                          </a>
+                      </li>
+                      <li class="theme-toggle-mobile">
+                          <button (click)="toggleTheme()" class="theme-toggle-btn">
+                              <i [class]="isDarkMode ? 'fas fa-sun' : 'fas fa-moon'"></i>
+                              <span>{{ isDarkMode ? 'Light Mode' : 'Dark Mode' }}</span>
+                          </button>
                       </li>
                       <li>
                           <a (click)="downloadCV()" class="main-btn cv-btn">

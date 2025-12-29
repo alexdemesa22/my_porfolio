@@ -7,6 +7,20 @@
         max-width: 480px;
     }
 
+    .skills-section {
+        margin-top: 25px;
+        
+        .skills-category-title {
+            color: $Green;
+            font-family: $CodeFont;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+    }
+
     .about-img-container{
         width: 324px;
         margin: auto;
@@ -72,15 +86,8 @@
 
 @media (max-width: 500px){
     .about{
-        .about-img-container img{
-            width: 200px;
-            height: 200px;
-        }
-        .about-img-container:after {
-            width: 200px;
-            height: 200px;
-            bottom: 190px;
-            left: 74px;
+        .about-img-container{
+            display: none !important;
         }
     }
 }

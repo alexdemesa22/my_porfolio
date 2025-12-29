@@ -9,21 +9,52 @@
             <div class="row">
                 <div class="col-12 col-md-6 mb-4 mb-md-0">
                     <div class="about-description">
-                        <p *ngFor='let text of "AboutMe.Paragraphs" | translate' [innerHTML]="text" data-aos="fade-up" data-aos-duration="1000">
+                        <p *ngFor='let text of "AboutMe.Paragraphs" | translate' [innerHTML]="text.replace('{{years}}', yearsOfExperience)" data-aos="fade-up" data-aos-duration="1000">
                         </p>
-                        <ul class="skills-list" data-aos="fade-up">
-                            <li class="skill-element" data-aos="fade-up" data-aos-duration="1000"><span class="underline">Angular </span></li>
-                            <li class="skill-element" data-aos="fade-up" data-aos-duration="1000"><span class="underline">Ionic Framework </span></li>
-                            <li class="skill-element" data-aos="fade-up" data-aos-duration="1000"><span class="underline">Java </span></li>
-                            <li class="skill-element" data-aos="fade-up" data-aos-duration="1000"><span class="underline">Android Studio </span></li>
-                            <li class="skill-element" data-aos="fade-up" data-aos-duration="1000"><span class="underline">Xcode (Swift/Obj-C Language) </span></li>
-                            <li class="skill-element" data-aos="fade-up" data-aos-duration="1000"><span class="underline">HTML &amp; (S)CSS </span></li>
-                            <li class="skill-element" data-aos="fade-up" data-aos-duration="1000"><span class="underline">Python </span></li>
-                            <li class="skill-element" data-aos="fade-up" data-aos-duration="1000"><span class="underline">Salesforce Apex Developer </span></li>
-                            <li class="skill-element" data-aos="fade-up" data-aos-duration="1000"><span class="underline">WordPress </span></li>
-                            <li class="skill-element" data-aos="fade-up" data-aos-duration="1000"><span class="underline">Laravel </span></li>
-                            <li class="skill-element" data-aos="fade-up" data-aos-duration="1000"><span class="underline">PHP </span></li>
-                        </ul>
+                        
+                        <div class="skills-section" data-aos="fade-up" data-aos-duration="1000">
+                            <h4 class="skills-category-title">Frontend & Mobile</h4>
+                            <ul class="skills-list">
+                                <li class="skill-element"><span class="underline">Angular</span></li>
+                                <li class="skill-element"><span class="underline">Ionic Framework</span></li>
+                                <li class="skill-element"><span class="underline">HTML & (S)CSS</span></li>
+                                <li class="skill-element"><span class="underline">TypeScript</span></li>
+                                <li class="skill-element"><span class="underline">JavaScript</span></li>
+                                <li class="skill-element"><span class="underline">Bootstrap</span></li>
+                            </ul>
+                        </div>
+
+                        <div class="skills-section" data-aos="fade-up" data-aos-duration="1000">
+                            <h4 class="skills-category-title">Backend & Database</h4>
+                            <ul class="skills-list">
+                                <li class="skill-element"><span class="underline">Laravel</span></li>
+                                <li class="skill-element"><span class="underline">PHP</span></li>
+                                <li class="skill-element"><span class="underline">Python</span></li>
+                                <li class="skill-element"><span class="underline">Node.js</span></li>
+                                <li class="skill-element"><span class="underline">MySQL</span></li>
+                                <li class="skill-element"><span class="underline">PostgreSQL</span></li>
+                            </ul>
+                        </div>
+
+                        <div class="skills-section" data-aos="fade-up" data-aos-duration="1000">
+                            <h4 class="skills-category-title">Mobile Development</h4>
+                            <ul class="skills-list">
+                                <li class="skill-element"><span class="underline">Android Studio</span></li>
+                                <li class="skill-element"><span class="underline">Xcode (Swift/Obj-C)</span></li>
+                                <li class="skill-element"><span class="underline">Java</span></li>
+                                <li class="skill-element"><span class="underline">iOS Development</span></li>
+                            </ul>
+                        </div>
+
+                        <div class="skills-section" data-aos="fade-up" data-aos-duration="1000">
+                            <h4 class="skills-category-title">Platforms & CMS</h4>
+                            <ul class="skills-list">
+                                <li class="skill-element"><span class="underline">Salesforce</span></li>
+                                <li class="skill-element"><span class="underline">WordPress</span></li>
+                                <li class="skill-element"><span class="underline">Shopify</span></li>
+                                <li class="skill-element"><span class="underline">Git</span></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <div class="col-12 col-md-6 mt-4 mt-md-0 text-center" data-aos="fade-up" data-aos-duration="1000">

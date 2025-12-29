@@ -5,7 +5,10 @@ import { AnalyticsService } from 'src/app/services/analytics/analytics.service';
 import { TranslateService } from '@ngx-translate/core';
 import { UntypedFormControl } from '@angular/forms';
 import { LanguageService } from 'src/app/services/language/language.service';
+import { ThemeService } from 'src/app/services/theme/theme.service';
 import { ThisReceiver } from '@angular/compiler';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { PdfViewerComponent } from '../pdf-viewer/pdf-viewer.component';
 
 
 @Component({
@@ -36,11 +39,14 @@ export class HeaderComponent implements OnInit {
   pageYPosition: number;
   languageFormControl: UntypedFormControl= new UntypedFormControl();
   cvName: string = "";
+  isDarkMode: boolean = true;
 
   constructor(
     private router: Router,
     public analyticsService: AnalyticsService,
-    public languageService: LanguageService
+    public languageService: LanguageService,
+    private modalService: NgbModal,
+    public themeService: ThemeService
   ) { }
 
   ngOnInit(): void {
@@ -48,6 +54,11 @@ export class HeaderComponent implements OnInit {
     this.languageFormControl.valueChanges.subscribe(val => this.languageService.changeLanguage(val))
 
     this.languageFormControl.setValue(this.languageService.language)
+
+    // Subscribe to theme changes
+    this.themeService.isDarkMode$.subscribe(isDark => {
+      this.isDarkMode = isDark;
+    });
 
   }
 
@@ -63,14 +74,17 @@ export class HeaderComponent implements OnInit {
   downloadCV(){
     this.languageService.translateService.get("Header.cvName").subscribe(val => {
       this.cvName = val
-      console.log(val)
-      // app url
-      let url = window.location.href;
-
-      // Open a new window with the CV
-      window.open(url + "/../assets/cv/" + this.cvName, "_blank");
+      const pdfUrl = `assets/cv/${this.cvName}`;
+      
+      const modalRef = this.modalService.open(PdfViewerComponent, {
+        size: 'xl',
+        centered: true,
+        windowClass: 'pdf-modal'
+      });
+      
+      modalRef.componentInstance.pdfUrl = pdfUrl;
+      this.responsiveMenuVisible = false;
     })
-
   }
 
   @HostListener('window:scroll', ['getScrollPosition($event)'])
@@ -80,5 +94,10 @@ export class HeaderComponent implements OnInit {
 
     changeLanguage(language: string) {
       this.languageFormControl.setValue(language);
+    }
+
+    toggleTheme() {
+      this.themeService.toggleTheme();
+      this.analyticsService.sendAnalyticEvent('toggle_theme', 'theme', this.isDarkMode ? 'light' : 'dark');
     }
 }
