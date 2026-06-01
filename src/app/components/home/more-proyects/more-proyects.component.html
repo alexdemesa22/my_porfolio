@@ -1,7 +1,7 @@
 <section class="section more-proyects">
     <div class="container">
         <div class="section-box">
-            <div class="">
+            <div appReveal>
                 <h3 class="section-title">
                     <span class='n-section-title'>04.</span> {{"OtherProjects.Title" | translate}}
                 </h3>
@@ -11,7 +11,7 @@
 
                     <div *ngFor='let project of "OtherProjects.Projects" | translate; let i = index'
                       (click)="redirect(project['demoLink'], $event)"
-                     class="col-12 col-md-6 col-lg-6 col-xl-4 proyect-col" data-aos="fade-up" data-aos-duration="1000">
+                     class="col-12 col-md-6 col-lg-6 col-xl-4 proyect-col" appReveal [revealDelay]="i * 80">
                         <div class="more-proyect-box">
                             <div class="row w-100 text-left m-0 p-0">
                                 <div class="col-6 p-0">

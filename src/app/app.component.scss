@@ -19,6 +19,7 @@
   animation-name: fall;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
+  will-change: transform, opacity;
 }
 
 @keyframes fall {
@@ -39,6 +40,12 @@
 
 .snowflake:nth-child(3n) {
   animation-name: fall-right;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .snow-container {
+    display: none;
+  }
 }
 
 @keyframes fall-left {

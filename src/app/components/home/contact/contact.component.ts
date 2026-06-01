@@ -2,6 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AnalyticsService } from 'src/app/services/analytics/analytics.service';
 import emailjs from '@emailjs/browser';
+import { environment } from 'src/environments/environment';
+
+interface ContactFormValue {
+  name: string;
+  email: string;
+  message: string;
+}
 
 @Component({
   selector: 'app-contact',
@@ -14,18 +21,7 @@ export class ContactComponent implements OnInit {
   submitSuccess = false;
   submitError = false;
 
-  // EmailJS Configuration
-  // TODO: Replace these with your actual EmailJS credentials
-  // Sign up at https://www.emailjs.com/
-  // 1. Create an account
-  // 2. Add an email service (Gmail, Outlook, etc.)
-  // 3. Create an email template
-  // 4. Get your Public Key from Account settings
-  private emailJsConfig = {
-    serviceId: 'YOUR_SERVICE_ID',        // Replace with your EmailJS Service ID
-    templateId: 'YOUR_TEMPLATE_ID',      // Replace with your EmailJS Template ID
-    publicKey: 'YOUR_PUBLIC_KEY'         // Replace with your EmailJS Public Key
-  };
+  private emailJsConfig = environment.emailJs;
 
   constructor(
     private fb: FormBuilder,
@@ -40,22 +36,19 @@ export class ContactComponent implements OnInit {
     });
   }
 
-  onSubmit() {
+  onSubmit(): void {
     if (this.contactForm.valid) {
       this.isSubmitting = true;
       this.submitSuccess = false;
       this.submitError = false;
 
-      const formData = this.contactForm.value;
+      const formData = this.contactForm.value as ContactFormValue;
       
-      // Check if EmailJS is configured
-      if (this.emailJsConfig.serviceId === 'YOUR_SERVICE_ID') {
-        // Fallback to mailto if EmailJS not configured
+      if (!this.emailJsConfig.serviceId || !this.emailJsConfig.templateId || !this.emailJsConfig.publicKey) {
         this.sendViaMailto(formData);
         return;
       }
 
-      // Send email using EmailJS
       emailjs.send(
         this.emailJsConfig.serviceId,
         this.emailJsConfig.templateId,
@@ -67,25 +60,21 @@ export class ContactComponent implements OnInit {
         },
         this.emailJsConfig.publicKey
       ).then(
-        (response) => {
-          console.log('Email sent successfully!', response.status, response.text);
+        () => {
           this.isSubmitting = false;
           this.submitSuccess = true;
           this.contactForm.reset();
           this.analyticsService.sendAnalyticEvent('contact_form_submit', 'contact', 'success');
           
-          // Hide success message after 5 seconds
           setTimeout(() => {
             this.submitSuccess = false;
           }, 5000);
         },
-        (error) => {
-          console.error('Failed to send email:', error);
+        () => {
           this.isSubmitting = false;
           this.submitError = true;
           this.analyticsService.sendAnalyticEvent('contact_form_submit', 'contact', 'error');
           
-          // Hide error message after 5 seconds
           setTimeout(() => {
             this.submitError = false;
           }, 5000);
@@ -94,8 +83,7 @@ export class ContactComponent implements OnInit {
     }
   }
 
-  private sendViaMailto(formData: any) {
-    // Fallback mailto method
+  private sendViaMailto(formData: ContactFormValue): void {
     const subject = encodeURIComponent('Portfolio Contact from ' + formData.name);
     const body = encodeURIComponent(
       `Name: ${formData.name}\n` +
@@ -103,7 +91,7 @@ export class ContactComponent implements OnInit {
       `Message:\n${formData.message}`
     );
     
-    window.location.href = `mailto:alexdemesa22@gmail.com?subject=${subject}&body=${body}`;
+    this.openMailClient(`mailto:alexdemesa22@gmail.com?subject=${subject}&body=${body}`);
     
     setTimeout(() => {
       this.isSubmitting = false;
@@ -114,6 +102,10 @@ export class ContactComponent implements OnInit {
         this.submitSuccess = false;
       }, 5000);
     }, 1000);
+  }
+
+  private openMailClient(mailtoUrl: string): void {
+    window.location.href = mailtoUrl;
   }
 
 }

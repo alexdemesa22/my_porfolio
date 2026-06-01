@@ -1,5 +1,9 @@
 @import "./variables.scss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Dark Theme (Default) */
 body {
   margin: 0;
@@ -14,12 +18,24 @@ body {
   font-family: $MainFont;
   font-size: 20px;
   transition: background-color 0.3s ease, color 0.3s ease;
+  --page-bg: #{$Navy};
+  --surface-bg: #{$LightNavy};
+  --surface-border: #{$LightestNavy};
+  --text-strong: #{$LightestSlate};
+  --text-muted: #{$Slate};
+  --accent: #{$Green};
 }
 
 /* Light Theme */
 body.light-theme {
   background-color: #f8f9fa;
   color: #2c3e50 !important;
+  --page-bg: #f8f9fa;
+  --surface-bg: #ffffff;
+  --surface-border: #e0e0e0;
+  --text-strong: #2c3e50;
+  --text-muted: #5a6c7d;
+  --accent: #64ffda;
 
   .section {
     background: #ffffff;
@@ -215,6 +231,20 @@ body.light-theme {
   transition: background-color 0.3s ease;
 }
 
+.app-reveal {
+  opacity: 0;
+  transform: translate3d(0, 26px, 0);
+  transition:
+    opacity 650ms cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms),
+    transform 650ms cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.app-reveal-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
 .code-font {
   font-family: $CodeFont;
 }
@@ -394,6 +424,26 @@ a {
 @media (max-width: 30em) {
   body {
     font-size: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 1ms !important;
+  }
+
+  .app-reveal {
+    opacity: 1;
+    transform: none;
   }
 }
 

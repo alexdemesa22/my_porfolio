@@ -73,10 +73,15 @@
         width: 100%;
         height: 100vh;
         z-index: 10;
-        transform: translateX(0vw);
         visibility: visible;
         outline: 0px;
-        transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+        background: rgba(2, 12, 27, 0);
+        transition: background 0.3s ease;
+
+        &.menu-open {
+          background: rgba(2, 12, 27, 0.6);
+          backdrop-filter: blur(3px);
+        }
         li{
           a{
             display: flex !important;
@@ -149,8 +154,7 @@
         }
     }
     .aside-show {
-        transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
-        right: 0px;
+        transform: translateX(0);
     }
     aside {
         width: 75vw;
@@ -163,12 +167,13 @@
         background-color: $LightNavy;
         height: 100%;
         position: relative;
-        right: -625px;
+        right: 0;
         margin-left: auto;
         font-family: $CodeFont;
         box-shadow: rgba(2, 12, 27, 0.7) -10px 0px 30px -15px;
         padding: 25px;
-        transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+        transform: translateX(105%);
+        transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease;
         nav {
             display: flex;
             -webkit-box-pack: justify;

@@ -72,7 +72,7 @@
         <div class="menu-wrapper">
             <div [class.animate]='responsiveMenuVisible' (click)='responsiveMenuVisible = !responsiveMenuVisible' class="hamburger-menu"></div>
         </div>
-        <div class="menu-responsive" [ngStyle]="{'pointer-events': !responsiveMenuVisible ? 'none' : '' }">
+        <div class="menu-responsive" [class.menu-open]="responsiveMenuVisible" [ngStyle]="{'pointer-events': !responsiveMenuVisible ? 'none' : '' }">
             <aside [class.aside-show]='responsiveMenuVisible' [class.nav-shadow]='this.pageYPosition>0' class="on-top">
                 <nav>
                     <ol>

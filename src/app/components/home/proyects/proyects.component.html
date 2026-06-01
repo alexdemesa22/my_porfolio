@@ -1,13 +1,13 @@
 <section class="section proyects" id='proyects'>
     <div class="container">
         <div class="section-box">
-            <div data-aos="fade-up" data-aos-duration="1000">
+            <div appReveal>
                 <h3 class="section-title">
                     <span class='n-section-title'>03.</span> {{"FeatureProjects.Title" | translate}}
                 </h3>
             </div>
 
-            <div *ngFor='let project of "FeatureProjects.Projects" | translate; let i = index' class="d-flex proyect-container" data-aos="fade-up" data-aos-duration="1000">
+            <div *ngFor='let project of "FeatureProjects.Projects" | translate; let i = index' class="d-flex proyect-container" appReveal [revealDelay]="i * 90">
                 <owl-carousel-o class='owl-carousel-o' [options]="customOptions" *ngIf="i%2==0">
                     <ng-container *ngFor="let img of project.imgs">
                         <ng-template carouselSlide [id]="project.Title+slide+i">
@@ -17,7 +17,7 @@
                         </ng-template>
                     </ng-container>
                 </owl-carousel-o>
-                <div class="img-feature-proyect-container" data-aos="fade-up" data-aos-duration="1000" *ngIf="i%2==0">
+                <div class="img-feature-proyect-container" *ngIf="i%2==0">
                     <div class="img-feature-proyect-box">
                         <div class="img-container" style='width: auto;'>
                             <img class='img-feature-proyect rounded' [src]="project.imgs[0]" [alt]="project.imgs[0]" width='600px'>
@@ -33,7 +33,7 @@
                             <img class='img-feature-proyect-mobile rounded' [src]="project.imgs[0]" [alt]="project.Title">
                         </div>
 
-                        <div class="proyect-description-box" (click)='debug()'>
+                        <div class="proyect-description-box">
                             <p class="mb-0" [innerHTML]="project.Description">
                             </p>
                         </div>
@@ -57,7 +57,7 @@
                         </ng-template>
                     </ng-container>
                 </owl-carousel-o>
-                <div class="img-feature-proyect-container" data-aos="fade-up" data-aos-duration="1000" *ngIf="i%2!=0">
+                <div class="img-feature-proyect-container" *ngIf="i%2!=0">
                     <div class="img-feature-proyect-box">
                         <div class="img-container" style='width: auto;'>
                             <img class='img-feature-proyect rounded' [src]="project.imgs[0]" [alt]="project.imgs[0]" width='600px'>
@@ -65,7 +65,7 @@
                     </div>
                 </div>
             </div>
-            <div class="text-center mt-5 pt-5" data-aos="fade-up" data-aos-duration="1000">
+            <div class="text-center mt-5 pt-5" appReveal>
                 <a href="https://github.com/alexdemesa?tab=repositories" target="_blank" class="main-btn">
                     <i class="fab fa-github mr-2"></i> View All Projects
                 </a>

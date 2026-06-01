@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import * as AOS from 'aos';
 import { Title, Meta } from '@angular/platform-browser';
-import {LanguageService} from "src/app/services/language/language.service"
+import { LanguageService } from 'src/app/services/language/language.service';
 
 
 @Component({
@@ -12,7 +11,12 @@ import {LanguageService} from "src/app/services/language/language.service"
 export class AppComponent implements OnInit{
   title = 'alexander-portfolio';
   showSnow = false;
-  snowflakes: any[] = [];
+  snowflakes: Array<{
+    left: number;
+    duration: number;
+    delay: number;
+    size: number;
+  }> = [];
   
   constructor(
     private titleService: Title,
@@ -41,11 +45,13 @@ export class AppComponent implements OnInit{
       this.generateSnowflakes();
     }
     
-    AOS.init(); 
-
   }
 
-  generateSnowflakes() {
+  generateSnowflakes(): void {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      return;
+    }
+
     const numberOfFlakes = 50; // Number of snowflakes
     for (let i = 0; i < numberOfFlakes; i++) {
       this.snowflakes.push({

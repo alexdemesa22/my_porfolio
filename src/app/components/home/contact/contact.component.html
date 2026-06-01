@@ -1,7 +1,7 @@
 <section class="section" id="contact">
   <div class="container contact">
     <div class="section-box">
-      <div class="mb-4" data-aos="fade-up" data-aos-duration="1000">
+      <div class="mb-4" appReveal>
         <h3 class="contact-pre-title big-subtitle">
           03. {{ "Contact.Pretitle" | translate }}
         </h3>
@@ -9,11 +9,11 @@
           {{ "Contact.Title" | translate }}
         </h4>
       </div>
-      <p data-aos="fade-up" data-aos-duration="1000">
+      <p appReveal revealDelay="100">
         {{ "Contact.Content" | translate }}
       </p>
       
-      <div class="contact-form-container mt-5" data-aos="fade-up" data-aos-duration="1000">
+      <div class="contact-form-container mt-5" appReveal revealDelay="180">
         <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
           <div class="form-group">
             <input 
@@ -69,14 +69,14 @@
           </div>
 
           <div class="success-message" *ngIf="submitSuccess">
-            ✓ Message sent successfully! I'll get back to you soon.
+            &#10003; Message sent successfully! I'll get back to you soon.
           </div>
           <div class="error-message" *ngIf="submitError">
-            ✗ There was an error sending your message. Please try again or email me directly at alexdemesa22&#64;gmail.com
+            &#10005; There was an error sending your message. Please try again or email me directly at alexdemesa22&#64;gmail.com
           </div>
         </form>
         
-        <!-- <div class="text-center mt-5 pt-4" data-aos="fade-up" data-aos-duration="1000">
+        <!-- <div class="text-center mt-5 pt-4">
           <p class="mb-3" style="color: #8892b0;">Prefer a quick chat?</p>
           <a href="https://calendly.com/alexdemesa22" target="_blank" class="main-btn">
             <i class="fas fa-calendar-alt mr-2"></i> Schedule a Call

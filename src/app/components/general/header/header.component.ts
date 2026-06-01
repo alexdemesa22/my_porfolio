@@ -1,14 +1,14 @@
-import { Component, OnInit, ViewChild, HostListener, AfterViewInit } from '@angular/core';
+import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {trigger, style, query, transition, stagger, animate } from '@angular/animations'
+import { trigger, style, query, transition, stagger, animate } from '@angular/animations';
 import { AnalyticsService } from 'src/app/services/analytics/analytics.service';
-import { TranslateService } from '@ngx-translate/core';
 import { UntypedFormControl } from '@angular/forms';
 import { LanguageService } from 'src/app/services/language/language.service';
 import { ThemeService } from 'src/app/services/theme/theme.service';
-import { ThisReceiver } from '@angular/compiler';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { PdfViewerComponent } from '../pdf-viewer/pdf-viewer.component';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
 
 @Component({
@@ -33,13 +33,14 @@ import { PdfViewerComponent } from '../pdf-viewer/pdf-viewer.component';
 
 
 
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, OnDestroy {
 
-  responsiveMenuVisible: Boolean = false;
-  pageYPosition: number;
-  languageFormControl: UntypedFormControl= new UntypedFormControl();
-  cvName: string = "";
-  isDarkMode: boolean = true;
+  responsiveMenuVisible = false;
+  pageYPosition = 0;
+  languageFormControl: UntypedFormControl = new UntypedFormControl();
+  cvName = '';
+  isDarkMode = true;
+  private destroy$ = new Subject<void>();
 
   constructor(
     private router: Router,
@@ -51,29 +52,39 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.languageFormControl.valueChanges.subscribe(val => this.languageService.changeLanguage(val))
+    this.languageFormControl.valueChanges
+      .pipe(takeUntil(this.destroy$))
+      .subscribe((val: string) => this.languageService.changeLanguage(val));
 
-    this.languageFormControl.setValue(this.languageService.language)
+    this.languageFormControl.setValue(this.languageService.language);
 
-    // Subscribe to theme changes
-    this.themeService.isDarkMode$.subscribe(isDark => {
-      this.isDarkMode = isDark;
-    });
+    this.themeService.isDarkMode$
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(isDark => {
+        this.isDarkMode = isDark;
+      });
 
   }
 
-  scroll(el) {
-    if(document.getElementById(el)) {
-      document.getElementById(el).scrollIntoView({behavior: 'smooth'});
-    } else{
-      this.router.navigate(['/home']).then(()=> document.getElementById(el).scrollIntoView({behavior: 'smooth'}) );
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
+  }
+
+  scroll(el: string): void {
+    const targetElement = document.getElementById(el);
+
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      this.router.navigate(['/home']).then(() => document.getElementById(el)?.scrollIntoView({ behavior: 'smooth' }));
     }
-    this.responsiveMenuVisible=false;
+    this.responsiveMenuVisible = false;
   }
 
-  downloadCV(){
-    this.languageService.translateService.get("Header.cvName").subscribe(val => {
-      this.cvName = val
+  downloadCV(): void {
+    this.languageService.translateService.get('Header.cvName').subscribe((val: string) => {
+      this.cvName = val;
       const pdfUrl = `assets/cv/${this.cvName}`;
       
       const modalRef = this.modalService.open(PdfViewerComponent, {
@@ -84,20 +95,20 @@ export class HeaderComponent implements OnInit {
       
       modalRef.componentInstance.pdfUrl = pdfUrl;
       this.responsiveMenuVisible = false;
-    })
+    });
   }
 
-  @HostListener('window:scroll', ['getScrollPosition($event)'])
-    getScrollPosition(event) {
-        this.pageYPosition=window.pageYOffset
-    }
+  @HostListener('window:scroll')
+  getScrollPosition(): void {
+    this.pageYPosition = window.pageYOffset;
+  }
 
-    changeLanguage(language: string) {
-      this.languageFormControl.setValue(language);
-    }
+  changeLanguage(language: string): void {
+    this.languageFormControl.setValue(language);
+  }
 
-    toggleTheme() {
-      this.themeService.toggleTheme();
-      this.analyticsService.sendAnalyticEvent('toggle_theme', 'theme', this.isDarkMode ? 'light' : 'dark');
-    }
+  toggleTheme(): void {
+    this.themeService.toggleTheme();
+    this.analyticsService.sendAnalyticEvent('toggle_theme', 'theme', this.isDarkMode ? 'light' : 'dark');
+  }
 }

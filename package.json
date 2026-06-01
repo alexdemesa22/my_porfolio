@@ -28,7 +28,6 @@
     "@ngx-translate/core": "^15.0.0",
     "@ngx-translate/http-loader": "^6.0.0",
     "@popperjs/core": "^2.11.8",
-    "aos": "^2.3.4",
     "bootstrap": "^4.5.0",
     "ngx-google-analytics": "^11.2.0",
     "ngx-owl-carousel-o": "^17.0.0",

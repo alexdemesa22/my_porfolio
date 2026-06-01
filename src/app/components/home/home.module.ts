@@ -11,15 +11,14 @@ import { JobsComponent } from './jobs/jobs.component';
 import { MoreProyectsComponent } from './more-proyects/more-proyects.component';
 import { ProyectsComponent } from './proyects/proyects.component';
 import { StatsComponent } from './stats/stats.component';
-import { NgbModule, NgbNav, NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { RevealDirective } from 'src/app/directives/reveal.directive';
 
-export function HttpLoaderFactory(http: HttpClient){
+export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
-
-
 
 @NgModule({
   declarations: [
@@ -31,6 +30,7 @@ export function HttpLoaderFactory(http: HttpClient){
     MoreProyectsComponent,
     ContactComponent,
     StatsComponent,
+    RevealDirective,
   ],
   imports: [
     CommonModule,
@@ -39,11 +39,11 @@ export function HttpLoaderFactory(http: HttpClient){
     CarouselModule,
     TranslateModule.forChild({
       loader: {
-          provide: TranslateLoader,
-          useFactory: HttpLoaderFactory,
-          deps: [HttpClient]
-      }
-    })
-  ]
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient],
+      },
+    }),
+  ],
 })
 export class HomeModule { }

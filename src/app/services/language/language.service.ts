@@ -1,32 +1,26 @@
 import { Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { Location } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LanguageService {
 
-  language: string= "en";
+  language = 'en';
 
   constructor(
     public translateService: TranslateService,
-    private location: Location,
   ) {}
 
-  initLanguage(){
-    this.translateService.addLangs(["en"])
-    let language = "en"
-    this.translateService.setDefaultLang(language)
-
-    // Change the URL without navigate:
-    // this.location.go(language)
-
-    this.language=language
+  initLanguage(): void {
+    const language = 'en';
+    this.translateService.addLangs([language]);
+    this.translateService.setDefaultLang(language);
+    this.language = language;
   }
 
-  changeLanguage(language){
-    this.translateService.setDefaultLang(language)
-    this.language=language
+  changeLanguage(language: string): void {
+    this.translateService.setDefaultLang(language);
+    this.language = language;
   }
 }

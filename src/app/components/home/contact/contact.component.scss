@@ -3,17 +3,12 @@
 .contact{
 
     margin: 0 auto;
-    max-width: 1000px;
     text-align: center;
     max-width: 600px;
     margin: 0 auto;
-    height: 100vh;
-    display: table;
-
-    .container{
-        display: table-cell;
-        vertical-align: middle;
-    }
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
 
     .contact-title{
 
@@ -86,6 +81,7 @@
                 outline: none;
                 border-color: $Green;
                 background-color: rgba($LightNavy, 0.8);
+                box-shadow: 0 0 0 3px rgba($Green, 0.12);
             }
 
             &::placeholder {
@@ -119,6 +115,7 @@
             background-color: rgba($Green, 0.1);
             border: 1px solid $Green;
             border-radius: 4px;
+            animation: message-in 240ms ease-out;
         }
 
         .form-submit {
@@ -139,15 +136,10 @@
 @media (max-width: 768px){
     
     .contact{
-        height: 100vh;
-        padding: 0 20px !important;
+        min-height: auto;
+        padding: 72px 20px !important;
         margin: 0 auto !important;
-        display: table;
-
-        .container{
-            display: table-cell;
-            vertical-align: middle;
-        }
+        display: flex;
 
         .contact-title{
             font-size: 40px;
@@ -156,5 +148,17 @@
         p{
             padding: 0 10px;
         }
+    }
+}
+
+@keyframes message-in {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
